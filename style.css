@@ -1,132 +1,182 @@
 main {
-    max-width:800px;
-    background-color:#cfc6b5;
-    margin: auto;
-    font-family: Arial, Helvetica, sans-serif;
-    display:grid; 
-    grid-gap: 10px;
-    grid-template-columns:1fr 1fr;
-    grid-template-areas: "h h"
-    "n n"
+  max-width: 800px;
+  background-color: #cfc6b5;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "h h"
     "as ar"
     "f f";
-
+  column-gap: 10px;
+  row-gap: 15px;
 }
 
-table, th, td {
-    border: 1px solid #506a85;
-    border-collapse: collapse;
-    border-color:#456280;
-    
+header {
+  height: 100px;
+  color: #456280;
+  grid-area: h;
+  display: grid;
+  align-items: baseline;
+  justify-items: stretch;
+  align-items: end;
+  background-color: #456280;
 }
 
-  header {
-    height:100px;
-    color: #456280;
-    grid-area: h;
+header nav {
+  display: grid;
+  padding: 15px 10px;
+  grid-template-areas: "ul sp";
+  align-items: baseline;
 }
 
+header nav span {
+  grid-area: sp;
+}
+
+.span-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.span-group input {
+  width: 100px;
+}
+
+.span-group svg {
+  fill: #fff;
+}
+
+.span-group .search {
+  background-color: #456280;
+}
+
+header nav ul {
+  grid-area: ul;
+}
 
 body {
-    background-color:#cfc6b5 ;
-    background-image:url(kepek/v3.jpg) ;
-
+  background-color: #cfc6b5;
+  background-image: url(kepek/v3.jpg);
 }
 
 div {
-    border:10px solid transparent ;
-    padding: 15px; 
-    grid-template-columns: 1ft 1fr;
+  border: 10px solid transparent;
+  padding: 15px;
+  grid-template-columns: 1ft 1fr;
 }
 
 article p {
-    color:#456280;
-   text-align: center;
+  color: #456280;
+  text-align: center;
 }
 
 h1 {
-    color: #456280;
-    
-    text-align: center;
+  color: #456280;
+  font-weight: 700;
+  text-align: center;
 }
 
 footer p {
-    color: #cfc6b5;
-    background-color:#7893ae ;
-    text-align: center;
-    height: 35px; 
-    
+  color: #cfc6b5;
+  background-color: #7893ae;
+  text-align: center;
+  padding: 10px;
 }
 
-nav, ul, li, a {
-    background-color:#cfc6b5 ;
-    color: #7893ae
-          
+nav,
+ul,
+li,
+a {
+  background-color: #cfc6b5;
+  color: #456280;
+  font-weight: 700;
+  color: #456280;
+  text-decoration-line: none;
 }
 
-th, td {
-    color: #456280;
-    width: 35px;
-    height: 35px;
-    text-align: center;
+nav ul li {
+  list-style: none;
 }
 
-th {
-    color:white ;
-    background-color: #456280;
+table.table,
+table.table th,
+table.table td {
+  border: 1px solid #506a85;
+  border-collapse: collapse;
+  border-color: #456280;
 }
 
-tr:nth-child(odd) td:nth-child(even) {
-    background-color:white;
+th,
+td {
+  color: #456280;
+  width: 35px;
+  height: 35px;
+  text-align: center;
 }
+
+table.table th {
+  color: white;
+  background-color: #456280;
+}
+
+table.table td {
+  background-color: #cfc6b5;
+}
+
+table.table tr:nth-child(even) td {
+  background-color: #fff;
+}
+
+tr:nth-child(odd) td
 
 img {
-    width: 100%;
-    border: 5px solid #456280;
+  width: 100%;
+  border: 5px solid #456280;
 }
 
 article {
-    grid-area: ar;
+  grid-area: ar;
+  margin-right: 20px;
 }
 aside {
-    grid-area: as;
+  grid-area: as;
 }
 
-footer{
-    grid-area: f;
-}
-nav{
-    grid-area: n;
+footer {
+  grid-area: f;
 }
 
-nav ul{
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr ;
-
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-left: 10px;
 }
 
-.Kepek {
-    grid-template-columns:1fr 1fr;
-    display: grid;
-    grid-gap: 10px;
+aside.images {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-gap: 10px;
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 700px) {
-    .Kepek {
-        grid-template-columns:1fr;
-        
-    }
-    main {
-        grid-template-areas: "h h"
-        "n n"
-        "as as"
-        "ar ar"
-        "f f";
-    
-    }
-    nav ul{
-        grid-template-columns:1fr ;
-        
-    }
-    
+  main {
+    grid-template-areas:
+      "h h"
+      "ar ar"
+      "as as"
+      "f f";
+  }
+
+  aside.images {
+    margin: 0 50px;
+    row-gap: 20px;
+    column-gap: 50px;
+  }
+
+  article {
+    margin: 0 10px;
+  }
 }
